@@ -1,9 +1,10 @@
 {
-  "name": "webpackTut",
+  "name": "webpack_app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sample webpack app",
+  "main": "bundle.js",
   "scripts": {
+    "start": "webpack-dev-server --entry ./src/index.js --output-filename ./dist/bundle.js",
     "build": "webpack"
   },
   "keywords": [],
