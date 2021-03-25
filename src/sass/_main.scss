@@ -1,0 +1,230 @@
+/*--------------------------------------------------------------
+    >>> TABLE OF CONTENTS:
+    ----------------------------------------------------------------
+    # Reseting
+    # Variables
+    # text span and other font styles
+    # Slider
+    # sections
+    # Footer
+    # arrow
+    # Media Query
+    # Animations
+    # Others
+        ## Other 1
+        ## Other 2
+        ## Other 3
+
+
+
+    /*--------------------------------------------------------------
+    # BreakPoints
+
+    --------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+    # Reseting with boostrap 
+    --------------------------------------------------------------*/
+
+@import '~bootstrap/scss/bootstrap';
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+/*--------------------------------------------------------------
+    # Variables
+    --------------------------------------------------------------*/
+
+:root {
+    --alpha-font-light: 'montseLight', sans-serif;
+    --alpha-font-regular: 'montseRegular', sans-serif;
+    --alpha-font-bold: 'montseBold', sans-serif;
+    --alpha-ligth-color: white;
+    --alpha-base: rgb(54, 54, 54);
+    --alpha-primary: #e70f0f;
+    --alpha-primary-high: #ff0;
+    --main-bg-color: rgb(57, 57, 57);
+    --second-bg-color: #dd1d44;
+    --alpha-blue-light: #43425e;
+    --alpha-gradient: 180deg, #0e4996 60%, #48b9ff 100%;
+    --alpha-darker: rgb(68, 68, 68);
+}
+
+//Breackpoints sass
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+.full-height {
+    height: 100%;
+}
+
+
+/*--------------------------------------------------------
+  text span and other font styles
+  --------------------------------------------------------------*/
+
+
+/* PRELOADER*/
+
+.preloader {
+    color: white;
+    display: flex;
+    z-index: 999;
+    background: var(--alpha-primary);
+    height: 100vh;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: all 2s;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+/*--------------------------------------------------------
+  MObile Toggle X 
+  --------------------------------------------------------------*/
+
+#header {
+    height: 100%;
+    background: rgb(35, 1, 59);
+    background: linear-gradient(180deg, rgba(35, 1, 59, 1) 2%, rgba(12, 171, 223, 1) 85%);
+    .text-hight {
+        color: var(--alpha-primary-high);
+    }
+    .explain {
+        font-size: 1.5rem;
+    }
+    .clouds {
+        background-position-x: center;
+        background-position-y: bottom;
+        bottom: 0px;
+        z-index: 50;
+        height: 380px;
+    }
+}
+
+#servicios {
+    .col-6 {
+        img {
+            transition: all 0.5s;
+            &:hover {
+                transform: scale(110%) rotateX(25deg);
+            }
+        }
+    }
+}
+
+footer {
+    background-color: var(--main-bg-color);
+    height: 100%;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .social {
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                color: var(--alpha-primary);
+                transform: scale(150%);
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    #navbarNavDropdown {
+        display: flex;
+        justify-content: end;
+        .navbar-nav {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: $lg) {
+    #navbarNavDropdown {
+        background-color: var(--alpha-primary);
+        padding: 20px;
+    }
+}
+
+//FIx top bar desktop break menu
+@media (min-width: $md) {
+    .submenuTop {
+        a {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------
+  MOtion
+  --------------------------------------------------------------*/
+
+.rocketSmall img {
+    animation: move 30s infinite;
+    opacity: 1;
+}
+
+.clouds {
+    width: 200%;
+    transform: translateX(-200px);
+    animation: clouds 10s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(10px) translateY(-10px);
+    }
+    25% {
+        transform: translateX(-10px) translateY(-5px);
+    }
+    50% {
+        transform: translateX(20px) translateY(-8px);
+    }
+    100% {
+        transform: translateX(-20px) translateY(-10px);
+    }
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(10px) translateY(50px);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateX(-10px) translateY(100px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(20px) translateY(50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-20px) translateY(100px);
+        opacity: 0.8;
+    }
+}
